@@ -3,12 +3,17 @@
 shawngmc/swarmprom is a customized fork of https://github.com/stefanprodan/swarmprom with updates and changes that shawngmc uses
 
 Swarmprom is a starter kit for Docker Swarm monitoring with:
-* [Prometheus](https://prometheus.io/), 
-* [Grafana](http://grafana.org/), 
-* [cAdvisor](https://github.com/google/cadvisor), 
-* [Node Exporter](https://github.com/prometheus/node_exporter), 
+* [Prometheus](https://prometheus.io/)
+* [Grafana](http://grafana.org/)
+* [cAdvisor](https://github.com/google/cadvisor)
+* [Node Exporter](https://github.com/prometheus/node_exporter)
 * [Alert Manager](https://github.com/prometheus/alertmanager)
-* [Unsee](https://github.com/cloudflare/unsee).
+* [Unsee](https://github.com/cloudflare/unsee)
+
+## Goals
+* Use secrets for username, password, etc.
+* Expose cadvisor for raw data view
+* Make config files more visible via volumes?
 
 ## Install
 
