@@ -1,33 +1,29 @@
-# swarmprom
+# shawngmc/swarmprom
 
-Swarmprom is a starter kit for Docker Swarm monitoring with [Prometheus](https://prometheus.io/), 
-[Grafana](http://grafana.org/), 
-[cAdvisor](https://github.com/google/cadvisor), 
-[Node Exporter](https://github.com/prometheus/node_exporter), 
-[Alert Manager](https://github.com/prometheus/alertmanager)
-and [Unsee](https://github.com/cloudflare/unsee).
+shawngmc/swarmprom is a customized fork of https://github.com/stefanprodan/swarmprom with updates and changes that shawngmc uses
+
+Swarmprom is a starter kit for Docker Swarm monitoring with:
+* [Prometheus](https://prometheus.io/), 
+* [Grafana](http://grafana.org/), 
+* [cAdvisor](https://github.com/google/cadvisor), 
+* [Node Exporter](https://github.com/prometheus/node_exporter), 
+* [Alert Manager](https://github.com/prometheus/alertmanager)
+* [Unsee](https://github.com/cloudflare/unsee).
 
 ## Install
 
 Clone this repository and run the monitoring stack:
 
 ```bash
-$ git clone https://github.com/stefanprodan/swarmprom.git
-$ cd swarmprom
-
-ADMIN_USER=admin \
-ADMIN_PASSWORD=admin \
-SLACK_URL=https://hooks.slack.com/services/TOKEN \
-SLACK_CHANNEL=devops-alerts \
-SLACK_USER=alertmanager \
-docker stack deploy -c docker-compose.yml mon
+git clone https://github.com/stefanprodan/swarmprom.git
+cd swarmprom
+docker stack deploy -c docker-compose.yml guiltyspark
 ```
 
 Prerequisites:
 
-* Docker CE 17.09.0-ce or Docker EE 17.06.2-ee-3
-* Swarm cluster with one manager and a worker node
-* Docker engine experimental enabled and metrics address set to `0.0.0.0:9323`
+* Docker CE 18.x
+* Docker Swarm mode enabled
 
 Services:
 
