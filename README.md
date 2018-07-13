@@ -15,9 +15,11 @@ dockerd-exporter | Docker daemon metrics collector, requires Docker experimental
 [Unsee](https://github.com/cloudflare/unsee) | alert manager dashboard | `http://<swarm-ip>:9094`
 Caddy | reverse proxy and basic auth provider for prometheus, alertmanager and unsee | N/A
 
+## Changes
+* Expose cadvisor for raw data view - if things aren't working, sometimes the simple UI is best
+
 ## Goals
 * Use secrets for username, password, etc.
-* Expose cadvisor for raw data view
 * Make config files more visible via volumes?
 
 ## Install
@@ -34,7 +36,6 @@ Prerequisites:
 
 * Docker CE 18.x
 * Docker Swarm mode enabled
-
 
 ## Setup Grafana
 
