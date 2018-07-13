@@ -3,12 +3,17 @@
 shawngmc/swarmprom is a customized fork of https://github.com/stefanprodan/swarmprom with updates and changes that shawngmc uses
 
 Swarmprom is a starter kit for Docker Swarm monitoring with:
-* [Prometheus](https://prometheus.io/)
-* [Grafana](http://grafana.org/)
-* [cAdvisor](https://github.com/google/cadvisor)
-* [Node Exporter](https://github.com/prometheus/node_exporter)
-* [Alert Manager](https://github.com/prometheus/alertmanager)
-* [Unsee](https://github.com/cloudflare/unsee)
+
+| Service | Purpose | Web UI |
+| --- | --- | --- |
+[Prometheus](https://prometheus.io/) | metrics database | `http://<swarm-ip>:9090`
+[Grafana](http://grafana.org/) | visualize metrics | `http://<swarm-ip>:3000`
+[cAdvisor](https://github.com/google/cadvisor) | container metrics collector | `http://<swarm-ip>:9095`
+[Node Exporter](https://github.com/prometheus/node_exporter) | host metrics collector | N/A
+dockerd-exporter | Docker daemon metrics collector, requires Docker experimental metrics-addr to be enabled | N/A
+[Alert Manager](https://github.com/prometheus/alertmanager) | alerts dispatcher | `http://<swarm-ip>:9093`
+[Unsee](https://github.com/cloudflare/unsee) | alert manager dashboard | `http://<swarm-ip>:9094`
+Caddy | reverse proxy and basic auth provider for prometheus, alertmanager and unsee | N/A
 
 ## Goals
 * Use secrets for username, password, etc.
@@ -29,17 +34,6 @@ Prerequisites:
 
 * Docker CE 18.x
 * Docker Swarm mode enabled
-
-Services:
-
-* prometheus (metrics database) `http://<swarm-ip>:9090`
-* grafana (visualize metrics) `http://<swarm-ip>:3000`
-* node-exporter (host metrics collector)
-* cadvisor (containers metrics collector)
-* dockerd-exporter (Docker daemon metrics collector, requires Docker experimental metrics-addr to be enabled)
-* alertmanager (alerts dispatcher) `http://<swarm-ip>:9093`
-* unsee (alert manager dashboard) `http://<swarm-ip>:9094`
-* caddy (reverse proxy and basic auth provider for prometheus, alertmanager and unsee)
 
 
 ## Setup Grafana
