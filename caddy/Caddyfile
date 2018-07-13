@@ -28,6 +28,16 @@
     tls off
 }
 
+:9095 {
+    basicauth / {$ADMIN_USER} {$ADMIN_PASSWORD}
+    proxy / cadvisor:8080 {
+            transparent
+        }
+
+    errors stderr
+    tls off
+}
+
 :3000 {
     proxy / grafana:3000 {
             transparent
